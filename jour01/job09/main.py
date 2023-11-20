@@ -1,9 +1,10 @@
-import codecs
+
+from decimal import Decimal
 # -*- coding: latin-1 -*-
 
 produit = {
     "nom" : "Pomme",
-    "prix": 0.15,
+    "prix": 1.15,
     "quantité en stock" : 25
 }
 
@@ -13,5 +14,9 @@ print(affichage_produit)
 user_acheteur = int(input(f"Combien de {produit['nom']} voulez vous acheter ? "))
 
 quantiter_acheter = int(user_acheteur)
-
-print(f" vous acheter {quantiter_acheter} {produit['nom']} du coup il reste {int(produit['quantité en stock']) - quantiter_acheter} {produit['nom']} en stock")
+nouvelle_quantiter = int(produit['quantité en stock']-quantiter_acheter )
+print(f"vous acheter {quantiter_acheter} {produit['nom']} du coup il reste {nouvelle_quantiter} en stock")
+print(f" prix actuel des {produit['nom']} est de {produit['prix']}.")
+print(f"Suite à l'inflation de la semaine derniere les prix on augmenter, voici les nouveau prix des {produit['nom']}: ")
+inflation = float(produit["prix"] * 0.10)
+print(f"Voici les imformations actuelle des {produit['nom']}, prix actuel {produit['prix'] + inflation} et sa quantité en stock est {produit['quantité en stock'] - quantiter_acheter}")
