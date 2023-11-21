@@ -1,9 +1,9 @@
-# calcul les nombre premier
-
-for n in range(0,1000 + 1):
-   if n > 1:
-       for i in range(2,n):
-           if (n % i) == 0:
-               break
-       else:
-           print(n)
+for i in range(0, 100):
+    i += 1
+    if (i % 5 == 0 and i % 3 == 0):
+        i = "FizzBuzz"
+    elif (i % 5 == 0):
+        i = "Buzz"
+    elif (i % 3 == 0):
+        i = "Fizz"
+    print(i)
